@@ -1,0 +1,52 @@
+<html>
+	<head> 
+		<style>
+			.progressBar-InnerDiv {                
+			    height: 100%;
+			    width: 0%;
+			    background: #7db9e8; /* Old browsers */
+			    background: -moz-linear-gradient(left,  #7db9e8 22%, #207cca 99%, #2989d8 100%, #1e5799 100%); /* FF3.6+ */
+			    background: -webkit-gradient(linear, left top, right top, color-stop(22%,#7db9e8), color-stop(99%,#207cca), color-stop(100%,#2989d8), 
+							color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
+			    background: -webkit-linear-gradient(left,  #7db9e8 22%,#207cca 99%,#2989d8 100%,#1e5799 100%); /* Chrome10+,Safari5.1+ */
+			    background: -o-linear-gradient(left,  #7db9e8 22%,#207cca 99%,#2989d8 100%,#1e5799 100%); /* Opera 11.10+ */
+			    background: -ms-linear-gradient(left,  #7db9e8 22%,#207cca 99%,#2989d8 100%,#1e5799 100%); /* IE10+ */
+			    background: linear-gradient(left,  #7db9e8 22%,#207cca 99%,#2989d8 100%,#1e5799 100%); /* W3C */
+			    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 ); /* IE6-9 */
+			}
+
+			.progressBar{
+			    height: 20px;
+			    width: 300px;
+			    border: 1px #1e5799 solid;
+			}​
+		</style>
+		<script type="text/javascript">
+		window.addEvent('domready',function(){
+			var bar1 = new ProgressBar('bar1');
+			var bar2 = new ProgressBar('bar2');
+			$('barContainer').adopt(bar1);
+			$('barContainer').adopt(bar2);
+
+			$('start').addEvent('click', function(event){
+			    event.stop();
+			    newNum=Number.random(0, 100);
+			    bar1.setValue(newNum);
+			    bar2.setValue(100-newNum);
+			});
+		});
+		</script>
+	</head>
+    <body>
+        <input type="button" name="start" id="start" value="Start" />
+        <div id="barContainer">
+        </div>
+    </body>
+</html>​
+
+
+
+
+
+
+​
